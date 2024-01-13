@@ -1,0 +1,28 @@
+Partition Equal Subset Sum
+
+class Solution{
+public:
+    int equalPartition(int N, int arr[])
+    {
+        int sum = 0;
+        vector<int>h1;
+        vector<int>h2;
+        for(int i=0; i<N; i++){
+            sum = sum + arr[i];
+        }
+        if(sum % 2 == 0){
+            //code here
+            int ans = sum/2;
+            h1.push_back(ans);
+            
+            for(int j=0; j<N; j++){
+                if(arr[j] == ans) continue;
+                else h2.push_back(arr[j]);
+            }
+            return 1;
+        } else{
+            return 0;
+        }
+        
+    }
+};
